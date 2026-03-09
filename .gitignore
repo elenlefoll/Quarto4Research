@@ -1,0 +1,15 @@
+/.quarto/
+**/*.quarto_ipynb
+.anaconda/
+**/.quarto/
+.DS_Store
+.Ruserdata
+.Renviron
+_publish.yml
+_quarto.yml
+*_files/
+*.tex
+*.zip
+LearningQuarto/
+.Rproj.user
+*.html
