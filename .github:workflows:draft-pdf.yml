@@ -1,9 +1,5 @@
 name: Draft PDF
-on:
-  push:
-    paths:
-      - JOSE/**
-      - .github/workflows/draft-pdf.yml
+on: [push]
 jobs:
   paper:
     runs-on: ubuntu-latest
