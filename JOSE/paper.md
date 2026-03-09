@@ -25,7 +25,7 @@ publishing system that turns plain text and code into publication-ready
 papers, slides, websites, books, and teaching materials. It unifies
 writing and computation, supports the implementation of seamless
 reproducible workflows, and bridges the gap between conducting, writing,
-and communicating research. As such, it is ideally suited for academic research and publishing.
+and communicating research [@wickhamDataScienceImport2023]. As such, it is ideally suited for academic research and publishing.
 
 The present article describes an accessible, hands-on introduction to
 Quarto for university students and academics with little to no prior
@@ -48,7 +48,7 @@ Horst](https://allisonhorst.com/cetinkaya-rundel-lowndes-quarto-keynote)
 from the ["Hello, Quarto"
 keynote](https://mine.quarto.pub/hello-quarto/#/hello-quarto-title) by
 Julia Lowndes and Mine Çetinkaya-Rundel, first presented at the RStudio
-Conference 2022)](images/AHorst_Quarto.png){#fig-QuartoFormats
+Conference 2022)](AHorst_Quarto.png){#fig-QuartoFormats
 fig-alt="A schematic representing the multi-language input (e.g. Python, R, Observable, Julia) and multi-format output (e.g. PDF, html, Word documents, and more) versatility of Quarto."}
 
 # Statement of need
