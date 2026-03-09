@@ -9,11 +9,11 @@ This step-by-step introduction to Quarto for academic research and publication c
 -   how to export and share Quarto documents in different formats including HTML, PDF, LibreOffice Writer, and Microsoft Word.
 
 # Usage
-The interactive (and most up-to-date) online version of the tutorial is available at: https://elenlefoll.quarto.pub/quarto4research. This is the version that I recommend learning from.
+The interactive (and most up-to-date) online version of the tutorial is available at: <https://elenlefoll.quarto.pub/quarto4research>. This is the version that I recommend learning from.
 
-To follow the instructions and complete the "Your turn!" sections, the tutorial requires learners to download and unzip LearningQuarto.zip. This compressed file contains the two datasets and the folder structure that is used throughout this tutorial.
+To follow the instructions and complete the "Your turn!" sections, the tutorial requires learners to download and unzip `LearningQuarto.zip`. This compressed file contains the two datasets and the folder structure that is used throughout this tutorial.
 
-The Quarto4Research.zip file contains the Quarto source code for the tutorial (Quarto4Research.qmd), as well as all the files necessary to render the tutorial locally. This ZIP file is primarily intended for educators who wish to adapt this Open Educational Resource (OER) to their students' needs.
+This repository contains the Quarto source code for the tutorial (`Quarto4Research.qmd`), as well as all the files necessary to render the tutorial locally. These files are primarily intended for educators who wish to adapt this Open Educational Resource (OER) to their students' needs.
 
 # License
 This tutorial is released under a CC-BY 4.0 license.
