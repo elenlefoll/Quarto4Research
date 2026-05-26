@@ -13,3 +13,6 @@ _quarto.yml
 LearningQuarto/
 .Rproj.user
 *.html
+.positai
+Quarto4Research/
+
