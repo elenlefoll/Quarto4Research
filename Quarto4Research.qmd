@@ -951,7 +951,7 @@ Below is the source code for @fig-RealisticPipeline in Markdown. The code includ
 
 ![A more realistic research pipeline](images/BERD_pipeline-real.jpg){#fig-RealisticPipeline fig-alt="Cartoon drawing of a set of pipes with various entry points for \"data\" and a single output: a research paper with text, a table, and a plot. Sections of the pipe are coloured according to the processes that they correspond to. These include data cleaning, overview, figures, modelling, and text." width="70%" fig-pos="H"}
 
-@fig-RealisticPipeline includes a caption, an alt-text, and a custom width as a percentage of page width. Note that, in the source code, special characters such as quotation marks need to be escaped using a backslash `\`. Tags beginning with `#fig-` can be used to cross-reference images by replacing the `#` with `@`. Hence, in this chapter, `@fig-RealisticPipeline` in the Quarto source code is rendered as @fig-RealisticPipeline.
+@fig-RealisticPipeline includes a caption, an alt-text, and a custom width as a percentage of page width. Note that, in the source code, special characters such as quotation marks need to be escaped using a backslash `\`. Tags beginning with `#fig-` can be used to cross-reference images by replacing the `#` with `@`. Hence, in this chapter, `@fig-RealisticPipeline` in the Quarto source code is rendered as: @fig-RealisticPipeline.
 
 Figures can be arranged in many ways. The example below uses the `:::` **div syntax** to display two images side-by-side. This syntax also allows for subcaptions as rendered in @fig-Pipelines.
 
@@ -1055,15 +1055,41 @@ An important aspect of academic writing is the inclusion of in-text bibliographi
 
 Alternatively, if you start typing `@` in the Visual editor, a quick reference menu will appear. Either way, any references that you add will be displayed as `@` followed by a **reference identifier**. For example, in the source code of this Quarto document, every reference to @DabrowskaExperienceAptitudeIndividual2019 is indicated as `@DabrowskaExperienceAptitudeIndividual2019`.
 
-::: callout-note
-For more information on how to format your in-text citations, see the [Quarto guide](https://quarto.org/docs/authoring/footnotes-and-citations.html#sec-citations).
+::: {.content-visible when-format="pdf"}
+ 
 :::
+
+:::::::: callout-tip
+#### Literature management {.unnumbered}
+
+Managing the large number of references that we need to consult, read, and cite when doing research can be a real challenge. The good news is that **reference management software** are there to help you overcome this challenge! Whether you are working on a term paper, a Master's dissertation, PhD thesis, or post-doctoral project, it is *always* worth investing the time to learn to use a reference manager!
 
 ::: {.content-visible when-format="pdf"}
  
 :::
 
-When you insert your first reference in a Quarto document, *RStudio* will automatically create a `references.bib` file in your project folder. All references are automatically added to this new [BibLaTeX](https://en.wikipedia.org/wiki/BibLaTeX) file. As shown in the example `references.bib` file below, `.bib` files contain entries that begin with `@` followed by the type of reference (`article`, `book`, `manual`, `url`, etc.) and the reference identifier (e.g. `DabrowskaExperienceAptitudeIndividual2019`, `wickhamDataScienceImport2023`). The rest of the entries contains structured information about each reference including its title, date of publication, and DOI or ISBN.
+[Zotero](https://www.zotero.org/) is a free and open-source bibliographic reference manager that will help you organise all your sources and generate beautifully formatted bibliographies for all your projects. It offers various [browser extensions](https://www.zotero.org/download/) that enable you to quickly add references to your library directly from your web browser.
+
+:::: {.content-visible when-format="html"}
+::: column-margin
+![[Zotero](https://www.zotero.org/) logo](images/Zotero_logo.png){width="100" fig-alt="A red Z on a folder with bookmarks."}
+:::
+::::
+
+::: {.content-visible when-format="pdf"}
+ 
+:::
+
+What's more, Zotero can be integrated in RStudio, making it very easy to include BibTeX-formatted references in your Quarto documents. Find out more in the [*RStudio* documentation](https://rstudio.github.io/visual-markdown-editing/citations.html).
+
+::: {.content-visible when-format="pdf"}
+ 
+:::
+
+Combining Zotero and Quarto also allows you to generate annotated bibliographies. Benjamin Tjepkes explains how to do this in a detailed [blog post](https://btjepkes.github.io/posts/building-annotated-bibliographies-with-quarto/).
+::::::::
+
+When you insert your first reference in a Quarto document, *RStudio* will automatically create a `references.bib` file in your project folder. All references are automatically added to this new [BibLaTeX](https://en.wikipedia.org/wiki/BibLaTeX) file. As shown in the example `references.bib` file below, `.bib` files contain entries that begin with `@` followed by the type of reference (`article`, `book`, `manual`, `url`, etc.) and the reference identifier (e.g. `DabrowskaExperienceAptitudeIndividual2019`, `francom2025`). The rest of the entries contains structured information about each reference including its title, author(s), date of publication, and DOI or ISBN.
 
 ``` {.bib .unnumbered .unlisted filename="references.bib"}
 @article{
@@ -1080,16 +1106,14 @@ When you insert your first reference in a Quarto document, *RStudio* will automa
   pages={72–100}
 }
 
-@book{
-  wickhamDataScienceImport2023,
-  place={Beijing, Boston, Farnham, Sebastopol, Tokyo},
-  edition={2},
-  title={R for Data Science: Import, tidy, transform, visualize, and model data},
-  ISBN={978-1-4920-9740-2},
-  url={https://r4ds.hadley.nz/},
-  publisher={O’Reilly},
-  author={Wickham, Hadley and Çetinkaya-Rundel, Mine and Grolemund, Garrett},
-  year={2023} 
+@book{francom2025,
+  title = {An Introduction to Quantitative Text Analysis for Linguistics: Reproducible Research Using {R}},
+  author = {Francom, Jerid},
+  year = {2025},
+  publisher = {Routledge},
+  address = {London},
+  doi = {10.4324/9781003393764},
+  isbn = {978-1-003-39376-4}
 }
 ```
 
@@ -1109,11 +1133,11 @@ bibliography: references.bib
 
 With this modified YAML header, when the document is rendered, a bibliography will automatically be added to the end of the document. This means that, if you have citations in your document, it is a good idea to include a header section `# References` at the end of the document.
 
-> ### References {.unnumbered .unlisted}
+> **References** 
 >
 > Dąbrowska, Ewa. 2019. "Experience, Aptitude, and Individual Differences in Linguistic Attainment: A Comparison of Native and Nonnative Speakers." *Language Learning* 69 (S1): 72-100. <https://doi.org/10.1111/lang.12323>.
 >
-> Wickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. 2023. *R for Data Science: Import, Tidy, Transform, Visualize, and Model Data*. 2nd ed. O'Reilly. <https://r4ds.hadley.nz/>.
+> Francom, Jerid. 2025. *An Introduction to Quantitative Text Analysis for Linguistics: Reproducible Research Using R*. London: Routledge. <https://doi.org/10.4324/9781003393764>.
 
 ::: {.content-visible when-format="pdf"}
  
@@ -1134,11 +1158,45 @@ csl: international-journal-of-learner-corpus-research.csl
 
 For example, if you wanted to submit your paper to the International Journal of Learner Corpus Research, you can download the [corresponding CLS stylesheet](https://www.zotero.org/styles/international-journal-of-learner-corpus-research) from the [Zotero styles database](https://www.zotero.org/styles), save it in your project folder, and link to it in your YAML header as above. When rendered, your document's bibliography will then read:
 
-> ### References {.unnumbered .unlisted}
+> **References** 
 >
 > Dąbrowska, E. (2019). Experience, Aptitude, and Individual Differences in Linguistic Attainment: A Comparison of Native and Nonnative Speakers. *Language Learning*, *69*(S1), 72-100. <https://doi.org/10.1111/lang.12323>.
 >
-> Wickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). *R for data science: Import, tidy, transform, visualize, and model data* (2nd ed.). O'Reilly. Retrieved from <https://r4ds.hadley.nz/>.
+> Francom, J. (2025). *An Introduction to Quantitative Text Analysis for Linguistics: Reproducible Research Using R*. Routledge. <https://doi.org/10.4324/9781003393764>
+
+There are many ways to include bibliography references in our writing. As shown in @tbl-CitationSxtax, citations can be integrated in our prose or listed in brackets after a statement. Note that we use square brackets for this purpose. We can also add page or chapter numbers and any other relevant information within the square brackets. The minus sign is useful to avoid repeating an authors' name. For more formatting options, check out the official [Quarto Guide](https://quarto.org/docs/authoring/citations.html).
+
+::: {#tbl-CitationSxtax}
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Quarto source code                                                                                                                                                                                        | Rendered output                                                                                                                                                                                           |
++===========================================================================================================================================================================================================+===========================================================================================================================================================================================================+
+| ``` default                                                                                                                                                                                               | As explained in @francom2025, we can also use Quarto to create presentation slides and easily publish them online.                                                                                        |
+| As explained in @francom2025, we can also use Quarto to create presentation slides and easily publish them online.                                                                                        |                                                                                                                                                                                                           |
+| ```                                                                                                                                                                                                       |                                                                                                                                                                                                           |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``` default                                                                                                                                                                                               | @francom2025 [p. 314] explains that "Quarto encourages modular and reproducible research practices, which connect public-facing with peer-facing communication".                                          |
+| @francom2025 [p. 314] explains that "Quarto encourages modular and reproducible research practices, which connect public-facing with peer-facing communication".                                          |                                                                                                                                                                                                           |
+| ```                                                                                                                                                                                                       |                                                                                                                                                                                                           |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``` default                                                                                                                                                                                               | Quarto is great for authoring and publishing reproducible research [@francom2025; @lefollQuarto2026].                                                                                                     |
+| Quarto is great for authoring and publishing reproducible research [@francom2025; @lefollQuarto2026].                                                                                                     |                                                                                                                                                                                                           |
+| ```                                                                                                                                                                                                       |                                                                                                                                                                                                           |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``` default                                                                                                                                                                                               | "Whether for other researchers or for your future self, creating research that is well-documented and reproducible is a fundamental part of conducting modern scientific inquiry" [@francom2025, p. 314]. |
+| "Whether for other researchers or for your future self, creating research that is well-documented and reproducible is a fundamental part of conducting modern scientific inquiry" [@francom2025, p. 314]. |                                                                                                                                                                                                           |
+| ```                                                                                                                                                                                                       |                                                                                                                                                                                                           |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``` default                                                                                                                                                                                               | Quarto allows for the seamless integration of references and resources in your writing [for more on Quarto, see @francom2025: Ch. 12].                                                                    |
+| Quarto allows for the seamless integration of references and resources in your writing [for more on Quarto, see @francom2025: Ch. 12].                                                                    |                                                                                                                                                                                                           |
+| ```                                                                                                                                                                                                       |                                                                                                                                                                                                           |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``` default                                                                                                                                                                                               | Quarto encourages us to ensure that our research is transparent, well-documented, reproducible, and accessible [see @francom2025; @lefollDataAnalysisLanguage2026; -@lefollQuarto2026]                    |
+| Quarto encourages us to ensure that our research is transparent, well-documented, reproducible, and accessible [see @francom2025; @lefollDataAnalysisLanguage2026; -@lefollQuarto2026]                    |                                                                                                                                                                                                           |
+| ```                                                                                                                                                                                                       |                                                                                                                                                                                                           |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Quarto syntax for citations
+:::
 
 :::: {.content-visible when-format="html"}
 ::: {.callout-tip collapse="false"}
@@ -1199,36 +1257,6 @@ wrong = "No, not quite. Citation styles can look very similar, but the devil is 
 ::: {.content-visible when-format="pdf"}
  
 :::
-
-:::::::: callout-tip
-#### Literature management {.unnumbered}
-
-Managing the large number of references that we need to consult, read, and cite when doing research can be a real challenge. The good news is that **reference management software** are there to help you overcome this challenge! Whether you are working on a term paper, a Master's dissertation, PhD thesis, or post-doctoral project, it is *always* worth investing the time to learn to use a reference manager!
-
-::: {.content-visible when-format="pdf"}
- 
-:::
-
-[Zotero](https://www.zotero.org/) is a free and open-source bibliographic reference manager that will help you organise all your sources and generate beautifully formatted bibliographies for all your projects. It offers various [browser extensions](https://www.zotero.org/download/) that enable you to quickly add references to your library directly from your web browser.
-
-:::: {.content-visible when-format="html"}
-::: column-margin
-![[Zotero](https://www.zotero.org/) logo](images/Zotero_logo.png){width="100" fig-alt="A red Z on a folder with bookmarks."}
-:::
-::::
-
-::: {.content-visible when-format="pdf"}
- 
-:::
-
-What's more, Zotero can be integrated in RStudio, making it very easy to include BibTeX-formatted references in your Quarto documents. Find out more in the [*RStudio* documentation](https://rstudio.github.io/visual-markdown-editing/citations.html).
-
-::: {.content-visible when-format="pdf"}
- 
-:::
-
-Combining Zotero and Quarto also allows you to generate annotated bibliographies. Benjamin Tjepkes explains how to do this in a detailed [blog post](https://btjepkes.github.io/posts/building-annotated-bibliographies-with-quarto/).
-::::::::
 
 # Reproducible research {#sec-Reproducibility}
 
